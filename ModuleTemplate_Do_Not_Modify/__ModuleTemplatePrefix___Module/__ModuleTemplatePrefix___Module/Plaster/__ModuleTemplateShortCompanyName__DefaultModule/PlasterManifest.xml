@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plasterManifest
+  schemaVersion="1.1"
+  templateType="Project" xmlns="http://www.microsoft.com/schemas/PowerShell/Plaster/v1">
+  <metadata>
+    <name>__ModuleTemplateShortCompanyName__DefaultModule</name>
+    <id>95e2c8c3-80d3-4350-9c54-ca7b1a165c10</id>
+    <version>1.0.0</version>
+    <title>__ModuleTemplateShortCompanyName__DefaultModule</title>
+    <description>Typical scaffolding for an __ModuleTemplateShortCompanyName__ PowerShell module</description>
+    <author>Scott Crawford</author>
+    <tags>Module, ScriptModule, ModuleManifest</tags>
+  </metadata>
+  <parameters>
+        <parameter name='Name'
+                   type='text'
+                   prompt='Enter the name of the module'/>
+
+        <parameter name='Description'
+                   type='text'
+                   prompt='Enter a description of the module'
+                   default="__ModuleTemplateShortCompanyName__ ${PLASTER_PARAM_ModuleName} module"/>
+
+        <parameter name='Author'
+                   type='text'
+                   prompt='Enter the author of the module'
+                   default='__ModuleTemplateAuthor__'/>
+
+        <parameter name='CompanyName'
+                   type='text'
+                   prompt='Enter the company name'
+                   default='__ModuleTemplateFullCompanyName__'/>
+
+        <parameter name='PowerShellVersion'
+                   type='text'
+                   prompt='Enter the minimum PowerShell version'
+                   default='5.1'/>
+
+        <parameter name='ModuleVersion'
+                   type='text'
+                   prompt='Enter the initial module version'
+                   default='$(Get-Date -Format "0.0.0.yyyyMMdd")'/>
+
+  </parameters>
+
+  <content>
+        <message>&#10;&#10;Scaffolding your PowerShell Module...&#10;&#10;&#10;</message>
+
+        <newModuleManifest destination='${PLASTER_PARAM_Name}\${PLASTER_PARAM_Name}.psd1'
+                           description='${PLASTER_PARAM_Description}'
+                           author='${PLASTER_PARAM_Author}'
+                           companyName='${PLASTER_PARAM_CompanyName}'
+                           powerShellVersion='${PLASTER_PARAM_PowerShellVersion}'
+                           moduleVersion='${PLASTER_PARAM_ModuleVersion}'
+                           nestedModules='${PLASTER_PARAM_Name}.psm1'
+                           encoding='UTF8-NoBOM'
+                           openInEditor="true"/>
+
+        <file source='Module\Module.psm1.txt'
+              destination='${PLASTER_PARAM_Name}\${PLASTER_PARAM_Name}.psm1'
+              openInEditor="true"/>
+
+        <file source='Module\Public\_Public.ps1.txt'
+              destination='${PLASTER_PARAM_Name}\Public\${PLASTER_PARAM_Name}_Public.ps1'
+              openInEditor="true"/>
+
+        <file source='Module\Private\_Private.ps1.txt'
+              destination='${PLASTER_PARAM_Name}\Private\${PLASTER_PARAM_Name}_Private.ps1'
+              openInEditor="true"/>
+
+        <templateFile source='test\Module.T.ps1.txt'
+                      destination='test\${PLASTER_PARAM_Name}.Tests.ps1' />
+
+        <requireModule name="Pester" minimumVersion="4.0.3"
+            message="Without Pester, you will not be able to run the provided Pester test to validate your module manifest file.`nWithout version 4.0.3, VS Code will not display Pester warnings and errors in the Problems panel."/>
+
+        <message>
+
+Your new PowerShell module project '$PLASTER_PARAM_Name' has been created.
+
+        </message>
+
+        <message>
+A Pester test has been created to validate the module's manifest file.  Add additional tests to the test directory.
+You can run the Pester tests in your project by executing the 'test' task.  Press Ctrl+P, then type 'task test'.
+
+        </message>
+  </content>
+</plasterManifest>
