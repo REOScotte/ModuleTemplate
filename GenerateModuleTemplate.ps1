@@ -35,7 +35,7 @@ Create a new module development template in C:\Save\SC_Module
 
 $params = @{
     Path = 'C:\Save\SC_Module'
-    FullCompanyName = 'Scottes Company'
+    FullCompanyName = "Scotte's Company"
     DomainName = 'scottes.com'
     ShortCompanyName = 'Scotte'
     Prefix = 'SC'

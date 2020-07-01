@@ -1,4 +1,4 @@
-Use GenerateModuleTemplate.ps1 to create a new module devlopment template.
+Use GenerateModuleTemplate.ps1 to create a new module development template.
 
 The contents of ModuleTemplate should not be modified directly. The script will copy the contents and modify as needed based on the values given to the script.
 
