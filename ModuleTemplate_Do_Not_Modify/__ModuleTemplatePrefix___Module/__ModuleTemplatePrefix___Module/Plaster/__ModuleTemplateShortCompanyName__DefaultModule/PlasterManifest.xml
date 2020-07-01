@@ -45,6 +45,7 @@
                            description='${PLASTER_PARAM_Description}'
                            author='${PLASTER_PARAM_Author}'
                            companyName='${PLASTER_PARAM_CompanyName}'
+                           copyright='(c) $((Get-Date).Year) ${PLASTER_PARAM_CompanyName}. All rights reserved.'
                            powerShellVersion='${PLASTER_PARAM_PowerShellVersion}'
                            moduleVersion='${PLASTER_PARAM_ModuleVersion}'
                            nestedModules='${PLASTER_PARAM_Name}.psm1'

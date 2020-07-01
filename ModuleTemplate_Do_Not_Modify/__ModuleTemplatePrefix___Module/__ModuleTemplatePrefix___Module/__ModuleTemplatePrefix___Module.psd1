@@ -21,13 +21,13 @@ ModuleVersion = '3.6.1.20190305'
 GUID = 'aa9ea3b9-4f6c-4d0c-9bed-42aa9a0cd51c'
 
 # Author of this module
-Author = 'Scott Crawford'
+Author = '__ModuleTemplateAuthor__'
 
 # Company or vendor of this module
 CompanyName = '__ModuleTemplateFullCompanyName__'
 
 # Copyright statement for this module
-Copyright = '(c) 2019 __ModuleTemplateFullCompanyName__. All rights reserved.'
+Copyright     = '(c) __ModuleTemplateYear__ __ModuleTemplateFullCompanyName__. All rights reserved.'
 
 # Description of the functionality provided by this module
 Description = 'Used to manage __ModuleTemplatePrefix__ Modules'

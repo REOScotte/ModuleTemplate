@@ -101,6 +101,7 @@ try {
             $content = $content -replace '__ModuleTemplatePrefix__',           $Prefix
             $content = $content -replace '__ModuleTemplateVariablePrefix__',   $VariablePrefix
             $content = $content -replace '__ModuleTemplateAuthor__',           $Author
+            $content = $content -replace '__ModuleTemplateYear__',             ((Get-Date).Year)
             
             $content | Set-Content -Path $file.FullName
         }
