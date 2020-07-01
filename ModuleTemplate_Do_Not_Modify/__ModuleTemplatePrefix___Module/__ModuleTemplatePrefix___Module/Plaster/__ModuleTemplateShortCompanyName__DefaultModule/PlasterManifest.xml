@@ -18,28 +18,23 @@
 
         <parameter name='Description'
                    type='text'
-                   prompt='Enter a description of the module'
-                   default="__ModuleTemplateShortCompanyName__ ${PLASTER_PARAM_ModuleName} module"/>
+                   prompt='Enter a description of the module'/>
 
         <parameter name='Author'
                    type='text'
-                   prompt='Enter the author of the module'
-                   default='__ModuleTemplateAuthor__'/>
+                   prompt='Enter the author of the module'/>
 
         <parameter name='CompanyName'
                    type='text'
-                   prompt='Enter the company name'
-                   default='__ModuleTemplateFullCompanyName__'/>
+                   prompt='Enter the company name'/>
 
         <parameter name='PowerShellVersion'
                    type='text'
-                   prompt='Enter the minimum PowerShell version'
-                   default='5.1'/>
+                   prompt='Enter the minimum PowerShell version'/>
 
         <parameter name='ModuleVersion'
                    type='text'
-                   prompt='Enter the initial module version'
-                   default='$(Get-Date -Format "0.0.0.yyyyMMdd")'/>
+                   prompt='Enter the initial module version'/>
 
   </parameters>
 
