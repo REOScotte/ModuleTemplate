@@ -45,10 +45,6 @@ function New-__ModuleTemplatePrefix__Module {
 
     process {
         try {
-            # Ensure Name starts with capitalized __ModuleTemplatePrefix___. The length check prevents an error if there's less than 3 characters in the name
-            if ($Name.Length -lt 3 -or $Name.Substring(0, 3) -ne '__ModuleTemplatePrefix___') {$Name = "__ModuleTemplatePrefix___$Name"}
-            $Name = $Name -replace "^...", "__ModuleTemplatePrefix___"
-
             # Capture any output from Invoke-Plaster and redirect it to stream 6 so it doesn't interfere with the desired output.
             $informationStream = Invoke-Plaster -TemplatePath $TemplatePath -DestinationPath .\$Name -Name $Name -Description $Description -Author $Author -CompanyName $CompanyName -PowerShellVersion $PowerShellVersion -ModuleVersion $ModuleVersion
             Write-Information $informationStream
