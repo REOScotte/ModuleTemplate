@@ -45,6 +45,9 @@ function New-__ModuleTemplatePrefix__Module {
 
     process {
         try {
+            # Add the prefix to the name
+            $Name = "__ModuleTemplatePrefix____$Name"
+
             # Capture any output from Invoke-Plaster and redirect it to stream 6 so it doesn't interfere with the desired output.
             $informationStream = Invoke-Plaster -TemplatePath $TemplatePath -DestinationPath .\$Name -Name $Name -Description $Description -Author $Author -CompanyName $CompanyName -PowerShellVersion $PowerShellVersion -ModuleVersion $ModuleVersion
             Write-Information $informationStream
