@@ -50,7 +50,7 @@ function New-__ModuleTemplatePrefix__Module {
 
             # Capture any output from Invoke-Plaster and redirect it to stream 6 so it doesn't interfere with the desired output.
             $informationStream = Invoke-Plaster -TemplatePath $TemplatePath -DestinationPath .\$Name -Name $Name -Description $Description -Author $Author -CompanyName $CompanyName -PowerShellVersion $PowerShellVersion -ModuleVersion $ModuleVersion
-            Write-Information $informationStream
+            if ($informationStream) { Write-Information $informationStream }
 
             # New manifests are created using '*' for various properties. These are replaced with the best practice of using @()
             $newManifestPath = ".\$Name\$Name\$Name.psd1"
