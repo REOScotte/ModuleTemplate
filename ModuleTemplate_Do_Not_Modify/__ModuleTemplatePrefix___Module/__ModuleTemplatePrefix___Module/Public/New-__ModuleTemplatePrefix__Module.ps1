@@ -40,7 +40,7 @@ function New-__ModuleTemplatePrefix__Module {
         [string]$CompanyName = '__ModuleTemplateFullCompanyName__',
         [string]$PowerShellVersion = '5.1',
         [string]$ModuleVersion = (Get-Date -Format '0.0.0.yyyyMMdd'),
-        [string]$TemplatePath = "$PSScriptRoot\..\Plaster\__ModuleTemplateShortCompanyName__DefaultModule"
+        [string]$TemplatePath = "$PSScriptRoot\..\Plaster\__ModuleTemplateShortCompanyNameNoSpaces__DefaultModule"
     )
 
     process {

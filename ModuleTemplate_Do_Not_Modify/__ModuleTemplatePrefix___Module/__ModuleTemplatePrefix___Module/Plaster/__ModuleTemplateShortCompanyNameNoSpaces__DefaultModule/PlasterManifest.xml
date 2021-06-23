@@ -3,11 +3,11 @@
   schemaVersion="1.1"
   templateType="Project" xmlns="http://www.microsoft.com/schemas/PowerShell/Plaster/v1">
   <metadata>
-    <name>__ModuleTemplateShortCompanyName__DefaultModule</name>
+    <name>__ModuleTemplateShortCompanyNameNoSpaces__DefaultModule</name>
     <id>95e2c8c3-80d3-4350-9c54-ca7b1a165c10</id>
     <version>1.0.0</version>
-    <title>__ModuleTemplateShortCompanyName__DefaultModule</title>
-    <description>Typical scaffolding for an __ModuleTemplateShortCompanyName__ PowerShell module</description>
+    <title>__ModuleTemplateShortCompanyName__ DefaultModule</title>
+    <description>Typical scaffolding for a __ModuleTemplateShortCompanyName__ PowerShell module</description>
     <author>Scott Crawford</author>
     <tags>Module, ScriptModule, ModuleManifest</tags>
   </metadata>
