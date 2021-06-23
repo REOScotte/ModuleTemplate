@@ -16,9 +16,9 @@ The source domain to search for
 The desired template for a new certificate
 
 .EXAMPLE
-Search for a certificate issued by __ModuleTemplateDomainName__ and if one isn't found, request one with the __ModuleTemplateShortCompanyName__CodeSigning template
+Search for a certificate issued by __ModuleTemplateDomainName__ and if one isn't found, request one with the __ModuleTemplateShortCompanyNameNoSpaces__CodeSigning template
 
-Get-__ModuleTemplatePrefix__CodeSigningCert -Domain __ModuleTemplateDomainName__ -TemplateName __ModuleTemplateShortCompanyName__CodeSigning
+Get-__ModuleTemplatePrefix__CodeSigningCert -Domain __ModuleTemplateDomainName__ -TemplateName __ModuleTemplateShortCompanyNameNoSpaces__CodeSigning
 
 .NOTES
 Author: Scott Crawford
@@ -29,7 +29,7 @@ function Get-__ModuleTemplatePrefix__CodeSigningCert {
 
     param (
         [string]$Domain = '__ModuleTemplateDomainName__',
-        [string]$TemplateName = '__ModuleTemplateShortCompanyName__CodeSigning'
+        [string]$TemplateName = '__ModuleTemplateShortCompanyNameNoSpaces__CodeSigning'
     )
 
     try {

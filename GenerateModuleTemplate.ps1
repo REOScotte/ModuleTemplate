@@ -72,6 +72,7 @@ param (
 
 try {
     [string]$VariablePrefix = $Prefix.ToLower()
+    [string]$ShortCompanyNameNoSpaces = $ShortCompanyName.Replace(' ', '')
     
     # Determine the path to the template that will be used. This should be in the parent of the current script.
     $scriptPath = Split-Path $MyInvocation.MyCommand.Path -Parent
@@ -95,19 +96,20 @@ try {
         if ($file -is [System.IO.FileInfo]) {
             $content = Get-Content -Path $file.FullName
             
-            $content = $content -replace '__ModuleTemplateFullCompanyName__',  $FullCompanyName
-            $content = $content -replace '__ModuleTemplateDomainName__',       $DomainName
-            $content = $content -replace '__ModuleTemplateShortCompanyName__', $ShortCompanyName
-            $content = $content -replace '__ModuleTemplatePrefix__',           $Prefix
-            $content = $content -replace '__ModuleTemplateVariablePrefix__',   $VariablePrefix
-            $content = $content -replace '__ModuleTemplateAuthor__',           $Author
-            $content = $content -replace '__ModuleTemplateYear__',             ((Get-Date).Year)
+            $content = $content -replace '__ModuleTemplateFullCompanyName__',          $FullCompanyName
+            $content = $content -replace '__ModuleTemplateDomainName__',               $DomainName
+            $content = $content -replace '__ModuleTemplateShortCompanyName__',         $ShortCompanyName
+            $content = $content -replace '__ModuleTemplateShortCompanyNameNoSpaces__', $ShortCompanyNameNoSpaces
+            $content = $content -replace '__ModuleTemplatePrefix__',                   $Prefix
+            $content = $content -replace '__ModuleTemplateVariablePrefix__',           $VariablePrefix
+            $content = $content -replace '__ModuleTemplateAuthor__',                   $Author
+            $content = $content -replace '__ModuleTemplateYear__',                     ((Get-Date).Year)
             
             $content | Set-Content -Path $file.FullName
         }
         
         # Get a new name for the files/folders while replacing the template variables. Rename only if different.
-        $newName = $file.Name.Replace('__ModuleTemplatePrefix__', $Prefix).Replace('__ModuleTemplateShortCompanyName__', $ShortCompanyName)
+        $newName = $file.Name.Replace('__ModuleTemplatePrefix__', $Prefix).Replace('__ModuleTemplateShortCompanyNameNoSpaces__', $ShortCompanyNameNoSpaces)
         if ($file.Name -ne $newName) {
             Rename-Item -Path $file.FullName -NewName $newName
         }
