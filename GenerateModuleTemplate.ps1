@@ -34,12 +34,12 @@ This will become the default author of modules created.
 Create a new module development template in C:\Save\SC_Module
 
 $params = @{
-    Path = 'C:\Save\SC_Module'
-    FullCompanyName = "Scotte's Company"
-    DomainName = 'scottes.com'
+    Path             = 'C:\Save\SC_Module'
+    FullCompanyName  = "Scotte's Company"
+    DomainName       = 'scottes.com'
     ShortCompanyName = 'Scotte'
-    Prefix = 'SC'
-    Author = 'Scott Crawford'
+    Prefix           = 'SC'
+    Author           = 'Scott Crawford'
 }
 
 .\GenerateModuleTemplate.ps1 @params
