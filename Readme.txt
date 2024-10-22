@@ -9,12 +9,12 @@ The output of the script should be checked into source control and the actual po
 Example
 
 $params = @{
-    Path = 'C:\Users\scott\OneDrive\Source\Repos\SC_Module'
-    FullCOmpanyName = 'scottes.com'
-    DomainName = 'scottes.com'
+    Path             = 'C:\Users\scott\OneDrive\Source\Repos\SC_Module'
+    FullCompanyName  = 'scottes.com'
+    DomainName       = 'scottes.com'
     ShortCompanyName = 'Scotte'
-    Prefix = 'SC'
-    Author = 'Scott Crawford'
+    Prefix           = 'SC'
+    Author           = 'Scott Crawford'
 }
 
 C:\Users\scott\OneDrive\Source\Repos\ModuleTemplate\GenerateModuleTemplate.ps1 @params
